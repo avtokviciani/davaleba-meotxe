@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>DashboardFragment.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+DashboardFragment.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.davaleba4.fragments</span>
+
+<span class="s1">import android.os.Bundle</span>
+<span class="s1">import android.view.View</span>
+<span class="s1">import android.widget.TextView</span>
+<span class="s1">import androidx.fragment.app.Fragment</span>
+<span class="s1">import androidx.fragment.app.FragmentContainerView</span>
+<span class="s1">import com.example.davaleba4.R</span>
+
+<span class="s0">class </span><span class="s1">DashboardFragment: Fragment(R.layout.fragment_dashboard) {</span>
+
+    <span class="s1">private lateinit </span><span class="s0">var </span><span class="s1">textView: TextView</span>
+
+    <span class="s1">override </span><span class="s0">fun </span><span class="s1">onViewCreated(view: View</span><span class="s0">, </span><span class="s1">savedInstanceState: Bundle?) {</span>
+        <span class="s0">super</span><span class="s1">.onViewCreated(view</span><span class="s0">, </span><span class="s1">savedInstanceState)</span>
+
+        <span class="s1">textView = view.findViewById(R.id.textView)</span>
+
+        <span class="s1">textView.text = DashboardFragmentArgs.fromBundle(requireArguments()).argument.toString()</span>
+
+    <span class="s1">}</span>
+
+
+<span class="s1">}</span></pre>
+</body>
+</html>

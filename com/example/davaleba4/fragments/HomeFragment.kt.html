@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>HomeFragment.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+HomeFragment.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.davaleba4.fragments</span>
+
+<span class="s1">import android.os.Bundle</span>
+<span class="s1">import android.view.LayoutInflater</span>
+<span class="s1">import android.view.View</span>
+<span class="s1">import android.view.ViewGroup</span>
+<span class="s1">import android.widget.Button</span>
+<span class="s1">import android.widget.EditText</span>
+<span class="s1">import android.widget.TextView</span>
+<span class="s1">import androidx.fragment.app.Fragment</span>
+<span class="s1">import androidx.navigation.fragment.findNavController</span>
+<span class="s1">import com.example.davaleba4.R</span>
+<span class="s1">import com.example.davaleba4.R.id.textView3</span>
+
+<span class="s0">class </span><span class="s1">HomeFragment : Fragment(R.layout.fragment_home) {</span>
+
+    <span class="s1">private lateinit </span><span class="s0">var </span><span class="s1">button: Button</span>
+    <span class="s1">private lateinit </span><span class="s0">var </span><span class="s1">editText: EditText</span>
+    <span class="s1">private lateinit </span><span class="s0">var </span><span class="s1">textView3: TextView</span>
+
+    <span class="s1">override </span><span class="s0">fun </span><span class="s1">onViewCreated(view: View</span><span class="s0">, </span><span class="s1">savedInstanceState: Bundle?) {</span>
+        <span class="s0">super</span><span class="s1">.onViewCreated(view</span><span class="s0">, </span><span class="s1">savedInstanceState)</span>
+
+        <span class="s1">button = view.findViewById(R.id.button)</span>
+        <span class="s1">editText = view.findViewById(R.id.editText)</span>
+        <span class="s1">textView3 = view.findViewById(R.id.textView3)</span>
+
+        <span class="s1">button.setOnClickListener{</span>
+
+            <span class="s0">val </span><span class="s1">amountText = editText.text.toString()</span>
+
+            <span class="s0">if </span><span class="s1">(amountText.isEmpty()){</span>
+                <span class="s0">return</span><span class="s1">@setOnClickListener</span>
+            <span class="s1">}</span>
+
+            <span class="s0">val </span><span class="s1">amount = amountText.toInt()</span>
+
+            <span class="s0">val </span><span class="s1">action = HomeFragmentDirections.actionHomeFragmentToDashboardFragment(amount)</span>
+
+            <span class="s1">findNavController().navigate(action)</span>
+        <span class="s1">}</span>
+
+    <span class="s1">}</span>
+
+
+<span class="s1">}</span>
+
+
+
+
+</pre>
+</body>
+</html>

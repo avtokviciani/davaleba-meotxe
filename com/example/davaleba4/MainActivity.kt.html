@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>MainActivity.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MainActivity.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.davaleba4</span>
+
+<span class="s1">import androidx.appcompat.app.AppCompatActivity</span>
+<span class="s1">import android.os.Bundle</span>
+<span class="s1">import androidx.navigation.NavController</span>
+<span class="s1">import androidx.navigation.findNavController</span>
+<span class="s1">import androidx.navigation.ui.AppBarConfiguration</span>
+<span class="s1">import androidx.navigation.ui.setupActionBarWithNavController</span>
+<span class="s1">import androidx.navigation.ui.setupWithNavController</span>
+<span class="s1">import com.google.android.material.bottomnavigation.BottomNavigationView</span>
+
+<span class="s0">class </span><span class="s1">MainActivity : AppCompatActivity() {</span>
+
+    <span class="s1">private lateinit </span><span class="s0">var </span><span class="s1">bottomNavView: BottomNavigationView</span>
+    <span class="s1">private lateinit </span><span class="s0">var </span><span class="s1">controller: NavController</span>
+
+    <span class="s1">override </span><span class="s0">fun </span><span class="s1">onCreate(savedInstanceState: Bundle?) {</span>
+        <span class="s0">super</span><span class="s1">.onCreate(savedInstanceState)</span>
+        <span class="s1">setContentView(R.layout.activity_main)</span>
+
+        <span class="s1">bottomNavView = findViewById(R.id.bottomNavView)</span>
+        <span class="s1">controller = findNavController(R.id.nav_host_fragment)</span>
+
+        <span class="s1">setupActionBarWithNavController(controller</span><span class="s0">, </span><span class="s1">AppBarConfiguration(</span>
+            <span class="s1">setOf(</span>
+                <span class="s1">R.id.homeFragment</span><span class="s0">,</span>
+                <span class="s1">R.id.dashboardFragment</span><span class="s0">,</span>
+                <span class="s1">R.id.notificationFragment</span><span class="s0">,</span>
+                <span class="s1">R.id.subscriptionsFragment</span>
+            <span class="s1">)</span>
+        <span class="s1">))</span>
+
+        <span class="s1">bottomNavView.setupWithNavController(controller)</span>
+
+    <span class="s1">}</span>
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
